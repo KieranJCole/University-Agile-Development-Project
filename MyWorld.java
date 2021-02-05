@@ -15,17 +15,17 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 400, 1);
         
-        setBackground(new GreenfootImage("background.png"));
+        setBackground(new GreenfootImage("background-export.png"));
         
-        //Player tank = new Player();
-        //Turret turret = new Turret(tank);
-        //addObject(tank, 150, 150);
-        //addObject(turret, 151, 145);
+        Player tank = new Player();
+        Turret turret = new Turret(tank);
+        addObject(tank, 150, 150);
+        addObject(turret, 151, 145);
         
-        addObject(new Player(), 150, 150);
-        addObject(new Turret(), 151, 145);
+        //addObject(new Player(), 150, 150);
+        //addObject(new Turret(), 151, 145);
         
         addObject(new Target(), 0, 0);
         
