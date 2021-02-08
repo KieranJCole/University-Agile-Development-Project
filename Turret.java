@@ -28,5 +28,16 @@ public class Turret extends Player
             MouseInfo mp = Greenfoot.getMouseInfo();
             turnTowards(mp.getX(), mp.getY());
         }
-    }    
+        if (Greenfoot.mouseClicked(this))
+        {
+            shoot();
+        }
+    }
+    
+    private void shoot()
+    {
+        Shell shell = new Shell();
+        getWorld().addObject(shell, getX(), getY());
+        shell.setRotation(getRotation());
+    }
 }

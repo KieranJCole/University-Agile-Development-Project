@@ -8,27 +8,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
+    double a = 150;
+    double b = 150;
     public void act() 
     {
         if (Greenfoot.isKeyDown("a"))
         {
-            setLocation(getX() - 1, getY());
-            setRotation(180);
+            turn(-1);
         }
-        else if (Greenfoot.isKeyDown("d"))
+        if (Greenfoot.isKeyDown("d"))
         {
-            setLocation(getX() + 1, getY());
-            setRotation(360);
+            turn(1);
         }
-        else if (Greenfoot.isKeyDown("w"))
+        if (Greenfoot.isKeyDown("w"))
         {
-            setLocation(getX(), getY() - 1);
-            setRotation(270);
+            //Below algorithm is not original to this project
+            //source: https://www.greenfoot.org/topics/8103/0
+            a += Math.cos(Math.toRadians(getRotation()))* 1;
+            b += Math.sin(Math.toRadians(getRotation())) * 1;
+            setLocation((int)a, (int)b);
+            
         }
-        else if (Greenfoot.isKeyDown("s"))
-        {
-            setLocation(getX(), getY() + 1);
-            setRotation(90);
+        if (Greenfoot.isKeyDown("s"))
+        {   
+            //source: https://www.greenfoot.org/topics/8103/0 
+            a -= Math.cos(Math.toRadians(getRotation()))* 1;
+            b -= Math.sin(Math.toRadians(getRotation())) * 1;
+            setLocation((int)a, (int)b);
         }
     }    
 }
