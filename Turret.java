@@ -8,6 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Turret extends Player
 {
+<<<<<<< HEAD
+=======
+    /**
+     * Act - do whatever the Turret wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    
+    private int direction, speed;
+>>>>>>> b60b42bc05f450a61f05c110c6abdbcf45c37785
     Player tank;
     
     public Turret(Player tank)
@@ -23,16 +32,9 @@ public class Turret extends Player
             MouseInfo mp = Greenfoot.getMouseInfo();
             turnTowards(mp.getX(), mp.getY());
         }
-        if (Greenfoot.mouseClicked(this))
+        if (Greenfoot.isKeyDown("space"))
         {
-            shoot();
+            getWorld().addObject(new Shell(getRotation()), getX(), getY());
         }
-    }
-    
-    private void shoot()
-    {
-        Shell shell = new Shell();
-        getWorld().addObject(shell, getX(), getY());
-        shell.setRotation(getRotation());
     }
 }
