@@ -8,11 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Turret extends Player
 {
-    /**
-     * Act - do whatever the Turret wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     Player tank;
     
     public Turret(Player tank)

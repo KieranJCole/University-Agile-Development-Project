@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.Random;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -14,7 +14,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        super(600, 400, 1);
+        super(1000, 1000, 1);
         
         setBackground(new GreenfootImage("background-export.png"));
         
@@ -24,5 +24,20 @@ public class MyWorld extends World
         addObject(turret, 151, 145);
         
         addObject(new Target(), 0, 0);
+        
+        addObject(new Wall(), 500, 500);
+        
+        addEnemy();
+    }
+    
+    private void addEnemy()
+    {
+        Random rand = new Random();
+        for (int i = 0; i < 3; i++)
+        {
+            int randX = rand.nextInt(1000);
+            int randY = rand.nextInt(1000);
+            addObject(new Enemy(), randX, randY);
+        }
     }
 }
