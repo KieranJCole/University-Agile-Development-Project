@@ -6,7 +6,7 @@ all he/she needs to know. The comments should usually include at least:
 
 PROJECT TITLE: Battles in the Cumulonimbus Clouds (Working Title)
 PURPOSE OF PROJECT: CO553 Project
-VERSION or DATE: V0.05
+VERSION or DATE: V0.07
 HOW TO START THIS PROJECT:
 AUTHORS: Kieran, Dan, Julian & George
 USER INSTRUCTIONS:
