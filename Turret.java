@@ -13,6 +13,7 @@ public class Turret extends Player
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    private int direction, speed;
     Player tank;
     
     public Turret(Player tank)
@@ -28,16 +29,18 @@ public class Turret extends Player
             MouseInfo mp = Greenfoot.getMouseInfo();
             turnTowards(mp.getX(), mp.getY());
         }
-        if (Greenfoot.mouseClicked(this))
+        if (Greenfoot.isKeyDown("space"))
         {
-            shoot();
+            getWorld().addObject(new Shell(getRotation()), getX(), getY());
+            //shoot();
         }
     }
     
-    private void shoot()
+    /* private void shoot()
     {
         Shell shell = new Shell();
         getWorld().addObject(shell, getX(), getY());
         shell.setRotation(getRotation());
-    }
+        speed = 15;
+    } */
 }
