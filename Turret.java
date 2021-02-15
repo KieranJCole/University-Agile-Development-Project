@@ -32,15 +32,6 @@ public class Turret extends Player
         if (Greenfoot.isKeyDown("space"))
         {
             getWorld().addObject(new Shell(getRotation()), getX(), getY());
-            //shoot();
         }
     }
-    
-    /* private void shoot()
-    {
-        Shell shell = new Shell();
-        getWorld().addObject(shell, getX(), getY());
-        shell.setRotation(getRotation());
-        speed = 15;
-    } */
 }
