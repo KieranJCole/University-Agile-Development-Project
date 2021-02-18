@@ -25,9 +25,11 @@ public class MyWorld extends World
         
         addObject(new Target(), 0, 0);
         
-        addObject(new Wall(), 500, 500);
-        
         addEnemy();
+        
+        addWall(300, 800);
+        addWall(400, 400);
+        addWall(900, 150);
     }
     
     private void addEnemy()
@@ -39,5 +41,16 @@ public class MyWorld extends World
             int randY = rand.nextInt(1000);
             addObject(new Enemy(), randX, randY);
         }
+    }
+    
+    private void addWall(int X, int Y)
+    {
+        Random rand = new Random();
+        
+        Wall wall = new Wall();
+        
+        addObject(wall, X,Y);
+        
+        wall.setRotation(rand.nextInt(360));
     }
 }

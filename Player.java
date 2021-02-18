@@ -10,6 +10,7 @@ public class Player extends Actor
 {
     double a = 150;
     double b = 150;
+    
     public void act() 
     {
         if (Greenfoot.isKeyDown("a"))
@@ -22,21 +23,37 @@ public class Player extends Actor
         }
         if (Greenfoot.isKeyDown("w"))
         {
-            if (!isTouching(Wall.class))
+            forward();
+            if (isTouching(Wall.class))
             {
-                //Below algorithm is not original to this project
-                //source: https://www.greenfoot.org/topics/8103/0
-                a += Math.cos(Math.toRadians(getRotation()))* 1;
-                b += Math.sin(Math.toRadians(getRotation())) * 1;
-                setLocation((int)a, (int)b);
+                back();
             }
         }
         if (Greenfoot.isKeyDown("s"))
         {
-                //source: https://www.greenfoot.org/topics/8103/0 
-                a -= Math.cos(Math.toRadians(getRotation()))* 1;
-                b -= Math.sin(Math.toRadians(getRotation())) * 1;
-                setLocation((int)a, (int)b);
+            back();
+            if (isTouching(Wall.class))
+            {
+                forward();
+            }
         }
-    }    
+    }
+    
+    private void forward()
+    {
+        //Below algorithm is not original to this project
+        //source: https://www.greenfoot.org/topics/8103/0
+        a += Math.cos(Math.toRadians(getRotation()))* 1;
+        b += Math.sin(Math.toRadians(getRotation())) * 1;
+        setLocation((int)a, (int)b);
+    }
+    
+    private void back()
+    {
+        //Below algorithm is not original to this project
+        //source: https://www.greenfoot.org/topics/8103/0
+        a -= Math.cos(Math.toRadians(getRotation()))* 1;
+        b -= Math.sin(Math.toRadians(getRotation())) * 1;
+        setLocation((int)a, (int)b);
+    }
 }
