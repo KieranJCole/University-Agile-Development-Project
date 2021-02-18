@@ -18,7 +18,7 @@ public class Shell extends Actor
     public Shell(int dir)
     {
         direction = dir;
-        speed = 1;
+        speed = 2;
     }
     
     public void act() 
@@ -31,7 +31,7 @@ public class Shell extends Actor
     
     public void Timer()
     {
-            if (++shellTimer == 60*5)
+    if (++shellTimer == 60*5)
     {
         getWorld().removeObject(this);
         return;

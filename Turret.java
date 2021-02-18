@@ -14,6 +14,10 @@ public class Turret extends Player
      */
     
     private int direction, speed;
+<<<<<<< HEAD
+=======
+    private int shotTimer;
+>>>>>>> 0b7b15d2c7fffad6f8653477958ea36d17d0d8c6
     Player tank;
     
     public Turret(Player tank)
@@ -29,9 +33,11 @@ public class Turret extends Player
             MouseInfo mp = Greenfoot.getMouseInfo();
             turnTowards(mp.getX(), mp.getY());
         }
-        if (Greenfoot.isKeyDown("space"))
+        if (Greenfoot.isKeyDown("space") && (shotTimer == 0)) //When Space is pressed the tank will fire if the Shot Timer is equal to 0
         {
             getWorld().addObject(new Shell(getRotation()), getX(), getY());
+            shotTimer = 200; //Currently the timer is set to roughly 5 seconds
         }
+        if (shotTimer > 0) shotTimer --; //If the Shot Timer is greater than 0 it will -1 for this act cycle.
     }
 }
