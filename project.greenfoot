@@ -3,7 +3,7 @@ class.Enemy.image=SmallEnemyBody.png
 class.EnemyTurret.image=SmallEnemyTurret.png
 class.MyWorld.image=background-export.png
 class.Player.image=SmallBody.png
-class.Shell.image=APHEHEHEHEHE.png
+class.Shell.image=APHEHEHEHEHE-export.png
 class.Target.image=Target.png
 class.Turret.image=SmallTurret.png
 class.Wall.image=Wall.png
@@ -28,19 +28,11 @@ dependency6.type=UsesDependency
 dependency7.from=Turret
 dependency7.to=Shell
 dependency7.type=UsesDependency
-<<<<<<< HEAD
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=232
 editor.fx.0.y=-18
 height=694
-=======
-editor.fx.0.height=838
-editor.fx.0.width=1550
-editor.fx.0.x=-7
-editor.fx.0.y=-7
-height=838
->>>>>>> 0b7b15d2c7fffad6f8653477958ea36d17d0d8c6
 package.numDependencies=7
 package.numTargets=8
 project.charset=UTF-8
@@ -114,7 +106,7 @@ target8.width=80
 target8.x=0
 target8.y=0
 version=3.0.0
-width=1550
+width=1294
 world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=0

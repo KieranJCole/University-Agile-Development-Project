@@ -14,10 +14,9 @@ public class Turret extends Player
      */
     
     private int direction, speed;
-<<<<<<< HEAD
-=======
+
     private int shotTimer;
->>>>>>> 0b7b15d2c7fffad6f8653477958ea36d17d0d8c6
+
     Player tank;
     
     public Turret(Player tank)
