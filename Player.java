@@ -56,4 +56,9 @@ public class Player extends Actor
         b -= Math.sin(Math.toRadians(getRotation())) * 1;
         setLocation((int)a, (int)b);
     }
+    
+    private void addTracks()
+    {
+        getWorld().addObject(new Tracks(), this.getX(), this.getY());
+    }
 }

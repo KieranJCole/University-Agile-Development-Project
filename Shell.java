@@ -26,15 +26,14 @@ public class Shell extends Actor
         setRotation(direction);
         move(speed);
         Timer();
-        
     } 
     
     public void Timer()
     {
-    if (++shellTimer == 60*5)
-    {
-        getWorld().removeObject(this);
-        return;
-    }
+        if (++shellTimer == 60*5)
+        {
+            getWorld().removeObject(this);
+            return;
+        }
     }
 }
