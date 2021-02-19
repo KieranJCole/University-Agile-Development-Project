@@ -18,15 +18,18 @@ public class Shell extends Actor
     public Shell(int dir)
     {
         direction = dir;
-        speed = 2;
+        speed = 4;
     }
     
     public void act() 
     {
         setRotation(direction);
         move(speed);
+        if (isTouching(Wall.class))
+        {
+            getWorld().removeObject(this);
+        }
         Timer();
-        
     } 
     
     public void Timer()
