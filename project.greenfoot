@@ -11,6 +11,9 @@ class.Wall.image=Wall.png
 dependency1.from=MyWorld
 dependency1.to=Player
 dependency1.type=UsesDependency
+dependency10.from=Enemy
+dependency10.to=Wall
+dependency10.type=UsesDependency
 dependency2.from=MyWorld
 dependency2.to=Turret
 dependency2.type=UsesDependency
@@ -29,6 +32,7 @@ dependency6.type=UsesDependency
 dependency7.from=Player
 dependency7.to=Tracks
 dependency7.type=UsesDependency
+<<<<<<< HEAD
 dependency8.from=Player
 dependency8.to=Wall
 dependency8.type=UsesDependency
@@ -42,6 +46,31 @@ editor.fx.0.y=0
 height=694
 package.numDependencies=9
 package.numTargets=9
+=======
+<<<<<<< HEAD
+dependency8.from=Shell
+dependency8.to=Wall
+dependency8.type=UsesDependency
+dependency9.from=Enemy
+dependency9.to=Player
+dependency9.type=UsesDependency
+editor.fx.0.height=838
+editor.fx.0.width=1550
+editor.fx.0.x=-7
+editor.fx.0.y=-7
+height=838
+package.numDependencies=10
+package.numTargets=8
+=======
+editor.fx.0.height=1096
+editor.fx.0.width=976
+editor.fx.0.x=-8
+editor.fx.0.y=-8
+height=1096
+package.numDependencies=7
+package.numTargets=9
+>>>>>>> dcdb43aa3e2d45a44e8daf6384247ad057b610a0
+>>>>>>> 8273f2261d20083974a2c1a1640a3bbf9e0c8034
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -92,7 +121,11 @@ target5.width=80
 target5.x=0
 target5.y=0
 target6.height=50
+<<<<<<< HEAD
 target6.name=Enemy
+=======
+target6.name=healthBar
+>>>>>>> 8273f2261d20083974a2c1a1640a3bbf9e0c8034
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=80
@@ -120,7 +153,11 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1294
+<<<<<<< HEAD
+width=1550
+=======
+width=1936
+>>>>>>> dcdb43aa3e2d45a44e8daf6384247ad057b610a0
 world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=0
