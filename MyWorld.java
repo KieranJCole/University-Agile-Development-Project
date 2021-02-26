@@ -8,10 +8,8 @@ import java.util.Random;
  */
 public class MyWorld extends World
 {
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    Player tank = new Player();
+    
     public MyWorld()
     {    
         super(1000, 1000, 1);
@@ -20,39 +18,50 @@ public class MyWorld extends World
         
         setPaintOrder(Target.class, Shell.class, Wall.class, Enemy.class, Player.class);
         
-        Player tank = new Player();
         Turret turret = new Turret(tank);
         addObject(tank, 150, 150);
         addObject(turret, 151, 145);
         
         addObject(new Target(), 0, 0);
         
-        addEnemy();
+        Enemy enemy = new Enemy();
+        EnemyTurret et = new EnemyTurret(enemy);
+        addEnemy(enemy);
+        addObject(et, 0, 0);
         
-        addWall(300, 800);
-        addWall(400, 400);
-        addWall(900, 150);
+        addWall(300,300);
+        addWall(750,300);
+        addWall(800,800);
+        addWall(350,700);
+        addWall(500,500);
     }
     
-    private void addEnemy()
+    private void addEnemy(Enemy enemy)
     {
         Random rand = new Random();
         for (int i = 0; i < 3; i++)
         {
             int randX = rand.nextInt(1000);
             int randY = rand.nextInt(1000);
-            addObject(new Enemy(), randX, randY);
+            addObject(enemy, randX, randY);
         }
     }
     
-    private void addWall(int X, int Y)
+    private void addWall(int x, int y)
     {
         Random rand = new Random();
+        int num = rand.nextInt(2);
         
         Wall wall = new Wall();
+        SideWall wall2 = new SideWall();
         
-        addObject(wall, X,Y);
-        
-        wall.setRotation(rand.nextInt(360));
+        if (num == 0)
+        {
+            addObject(wall, x, y);
+        }
+        if (num == 1)
+        {
+            addObject(wall2, x, y);
+        }
     }
 }

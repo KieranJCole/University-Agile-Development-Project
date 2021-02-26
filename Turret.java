@@ -37,6 +37,9 @@ public class Turret extends Player
             getWorld().addObject(new Shell(getRotation()), getX(), getY());
             shotTimer = 200; //Currently the timer is set to roughly 5 seconds
         }
-        if (shotTimer > 0) shotTimer --; //If the Shot Timer is greater than 0 it will -1 for this act cycle.
+        if (shotTimer > 0)
+        {
+            shotTimer --; //If the Shot Timer is greater than 0 it will -1 for this act cycle.
+        }
     }
 }
