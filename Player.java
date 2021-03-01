@@ -43,8 +43,8 @@ public class Player extends Actor
     {
         //Below algorithm is not original to this project
         //source: https://www.greenfoot.org/topics/8103/0
-        a += Math.cos(Math.toRadians(getRotation()))* 1;
-        b += Math.sin(Math.toRadians(getRotation())) * 1;
+        a += Math.cos(Math.toRadians(getRotation()))* 1.15;
+        b += Math.sin(Math.toRadians(getRotation())) * 1.15;
         setLocation((int)a, (int)b);
     }
     
@@ -52,8 +52,8 @@ public class Player extends Actor
     {
         //Below algorithm is not original to this project
         //source: https://www.greenfoot.org/topics/8103/0
-        a -= Math.cos(Math.toRadians(getRotation()))* 1;
-        b -= Math.sin(Math.toRadians(getRotation())) * 1;
+        a -= Math.cos(Math.toRadians(getRotation()))* 1.15;
+        b -= Math.sin(Math.toRadians(getRotation())) * 1.15;
         setLocation((int)a, (int)b);
     }
     

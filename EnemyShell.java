@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Shell here.
+ * Write a description of class EnemyShell here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Shell extends Actor
+public class EnemyShell extends Actor
 {
     /**
      * Act - do whatever the Shell wants to do. This method is called whenever
@@ -15,7 +15,7 @@ public class Shell extends Actor
     private int direction, speed;
     private int shellTimer;
     
-    public Shell(int dir)
+    public EnemyShell(int dir)
     {
         direction = dir;
         speed = 4;

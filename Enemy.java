@@ -23,7 +23,12 @@ public class Enemy extends Actor
         
         if (isTouching(Wall.class) || isTouching(SideWall.class))
         {
-            back();
+            move(-1);
+        }
+        
+        if (getDistance(tank, this) <= 300)
+        {
+            move(-1);
         }
     }
     
@@ -34,5 +39,12 @@ public class Enemy extends Actor
         a -= Math.cos(Math.toRadians(getRotation()))* 1;
         b -= Math.sin(Math.toRadians(getRotation())) * 1;
         setLocation((int)a, (int)b);
+    }
+    
+    //The below method uses mathematics from the following source:
+    //https://www.greenfoot.org/topics/282
+    public double getDistance(Actor tank, Enemy enemy)
+    {
+        return Math.sqrt(Math.pow(tank.getX() - enemy.getX(), 2) + Math.pow(tank.getY() - enemy.getY(), 2));
     }
 }
