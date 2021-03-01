@@ -24,7 +24,7 @@ public class Player extends Actor
         if (Greenfoot.isKeyDown("w"))
         {
             forward();
-            if (isTouching(Wall.class))
+            if (isTouching(Wall.class) || isTouching(SideWall.class))
             {
                 back();
             }
@@ -32,7 +32,7 @@ public class Player extends Actor
         if (Greenfoot.isKeyDown("s"))
         {
             back();
-            if (isTouching(Wall.class))
+            if (isTouching(Wall.class) || isTouching(SideWall.class))
             {
                 forward();
             }
@@ -55,5 +55,10 @@ public class Player extends Actor
         a -= Math.cos(Math.toRadians(getRotation()))* 1;
         b -= Math.sin(Math.toRadians(getRotation())) * 1;
         setLocation((int)a, (int)b);
+    }
+    
+    private void addTracks()
+    {
+        getWorld().addObject(new Tracks(), this.getX(), this.getY());
     }
 }

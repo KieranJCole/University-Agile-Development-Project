@@ -1,11 +1,14 @@
 #BlueJ class context
 comment0.target=healthBar
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ healthBar\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=amount
-comment1.target=void\ hit(int)
-comment1.text=public\ Bar(String\ refText,\ String\ unitType,\ int\ initValue,\ int\ maxValue)\ \r\n\ referenceText\ \=\ \r\n
+comment1.params=
+comment1.target=void\ newImage()
 comment2.params=amount
-comment2.target=void\ addHealth(int)
-comment3.params=
-comment3.target=void\ checkValue()
-numComments=4
+comment2.target=void\ hit(int)
+comment3.params=amount
+comment3.target=void\ addHealth(int)
+comment4.params=
+comment4.target=void\ checkValue()
+comment5.params=
+comment5.target=int\ getValue()
+numComments=6
