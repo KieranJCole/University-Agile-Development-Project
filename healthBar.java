@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.awt.Color;
+
 /**
  * Write a description of class healthBar here.
  * 
@@ -8,34 +8,21 @@ import java.awt.Color;
  */
 public class healthBar extends Player
 {
-    private int maxHealth = 100;//GREEN
-    private int warningHealth = 40;//ORANGE
-    private int lowHealth = 20;//RED
-    private int endHealth = 0; //player eliminated
-    private int value = 0; // to add and subtract health from player
+    Player tank;
     
-    
-    private Color textColor = Color.BLACK; // shows value of how much health the player has
-    private Color greenHealth = Color.GREEN; // Health color til health gets down to 40
-    private Color orangeHealth = Color.ORANGE;// Health color til health gets down to 20
-    private Color redHealth = Color.RED;// Health color til player is destroyed.
-    
-    public void hit(int amount)
+    public healthBar(Player tank)
     {
-        value -= amount;
-        checkValue();
+        this.tank = tank;
     }
     
-    public void addHealth(int amount)
+    public void act() 
     {
-        value += amount;
-        checkValue();
+        changeSize();
     }
     
-    private void checkValue()
+    private void changeSize()
     {
-       if (value < endHealth) value = endHealth;
-       if (value > maxHealth) value = maxHealth;
+        GreenfootImage image = getImage();
+        image.scale(tank.getHealth(), 50);
     }
-    
 }

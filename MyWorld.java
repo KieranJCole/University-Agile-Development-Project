@@ -34,6 +34,8 @@ public class MyWorld extends World
         addWall(800,800);
         addWall(350,700);
         addWall(500,500);
+        
+        addObject(new healthBar(tank), 150, 150);
     }
     
     private void addEnemy(Enemy enemy)

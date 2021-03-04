@@ -34,7 +34,7 @@ public class Shell extends Actor
     
     public void Timer()
     {
-        if (++shellTimer == 60*5)
+        if (++shellTimer == 60*5) //Source: https://www.greenfoot.org/topics/61012/0
         {
             getWorld().removeObject(this);
             return;
