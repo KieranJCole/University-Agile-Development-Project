@@ -21,7 +21,7 @@ public class Enemy extends Actor
         Actor tank = (Actor)getWorld().getObjects(Player.class).get(0);
         turnTowards(tank.getX(), tank.getY());
         
-        if (isTouching(Wall.class) || isTouching(SideWall.class))
+        if (/*isTouching(Wall.class) || */ isTouching(SideWall.class))
         {
             move(-1);
         }
@@ -29,6 +29,11 @@ public class Enemy extends Actor
         if (getDistance(tank, this) <= 300)
         {
             move(-1);
+        }
+        
+        if (isTouching(Wall.class))
+        {
+            setLocation(getX()-1, getY());
         }
     }
     
