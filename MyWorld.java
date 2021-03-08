@@ -16,7 +16,7 @@ public class MyWorld extends World
         
         setBackground(new GreenfootImage("background-export.png"));
         
-        setPaintOrder(Target.class, Shell.class, Wall.class, Enemy.class, Player.class);
+        setPaintOrder(Target.class, Shell.class, Wall.class, Player.class, Enemy.class);
         
         Turret turret = new Turret(tank);
         addObject(tank, 150, 150);
@@ -25,9 +25,7 @@ public class MyWorld extends World
         addObject(new Target(), 0, 0);
         
         Enemy enemy = new Enemy();
-        EnemyTurret et = new EnemyTurret(enemy);
-        addEnemy(enemy);
-        addObject(et, 0, 0);
+        addEnemy();
         
         addWall(300,300);
         addWall(750,300);
@@ -38,14 +36,20 @@ public class MyWorld extends World
         addObject(new healthBar(tank), 150, 150);
     }
     
-    private void addEnemy(Enemy enemy)
+    private void addEnemy()
     {
         Random rand = new Random();
         for (int i = 0; i < 3; i++)
         {
+            Enemy enemy = new Enemy();
             int randX = rand.nextInt(1000);
             int randY = rand.nextInt(1000);
             addObject(enemy, randX, randY);
+            
+            addObject(new EhealthBar(enemy),randX - 40, randY);
+            
+            EnemyTurret et = new EnemyTurret(enemy);
+            addObject(et, 0, 0);
         }
     }
     

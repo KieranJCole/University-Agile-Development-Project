@@ -8,18 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
-    /**
-     * Act - do whatever the Enemy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     double a = 150;
     double b = 150;
     
+    int health = 25;
+    
     public void act() 
     {
-        move (1);
         Actor tank = (Actor)getWorld().getObjects(Player.class).get(0);
-        turnTowards(tank.getX(), tank.getY());
+        
+        if (health > 1)
+        {
+            move (1);
+            turnTowards(tank.getX(), tank.getY());
+        }
         
         if (isTouching(Wall.class) || isTouching(SideWall.class))
         {
@@ -28,7 +30,19 @@ public class Enemy extends Actor
         
         if (getDistance(tank, this) <= 300)
         {
-            move(-1);
+            if (health > 1)
+            {
+                move(-1);
+            }
+        }
+        
+        if (isTouching(Shell.class) && health - 1 >= 1)
+        {
+            loseHealth(1);
+        }
+        else
+        {
+            this.setImage("SmallEnemyBodyDamaged.png");
         }
     }
     
@@ -46,5 +60,15 @@ public class Enemy extends Actor
     public double getDistance(Actor tank, Enemy enemy)
     {
         return Math.sqrt(Math.pow(tank.getX() - enemy.getX(), 2) + Math.pow(tank.getY() - enemy.getY(), 2));
+    }
+    
+    public void loseHealth(int damage)
+    {
+        health = health - damage;
+    }
+    
+    public int getHealth()
+    {
+        return health;
     }
 }

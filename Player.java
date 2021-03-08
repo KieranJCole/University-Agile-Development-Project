@@ -12,9 +12,7 @@ public class Player extends Actor
     double b = 150;
     
     int health = 100;
-    
-    private int protection;
-    
+
     public void act() 
     {       
         if (Greenfoot.isKeyDown("a"))

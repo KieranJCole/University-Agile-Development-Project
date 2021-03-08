@@ -1,30 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class healthBar here.
+ * Write a description of class EhealthBar here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class healthBar extends Player
+public class EhealthBar extends Enemy
 {
-    Player tank;
+    Enemy enemy;
     
-    public healthBar(Player tank)
+    public EhealthBar(Enemy enemy)
     {
-        this.tank = tank;
+        this.enemy = enemy;
     }
     
     public void act() 
     {
         changeSize();
         
-        setLocation(tank.getX(), tank.getY() - 40);
+        setLocation(enemy.getX(), enemy.getY() - 40);
     }
     
     private void changeSize()
     {
         GreenfootImage image = getImage();
-        image.scale(tank.getHealth(), 50);
-    }
+        image.scale(enemy.getHealth(), 50);
+    }   
 }

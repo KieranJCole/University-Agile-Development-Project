@@ -24,15 +24,23 @@ public class EnemyTurret extends Enemy
         setLocation(enemy.getX(), enemy.getY());
         
         setRotation(enemy.getRotation());
-        
+ 
         if (shotTimer == 0)
         {
-            getWorld().addObject(new EnemyShell(getRotation()), getX(), getY());
-            shotTimer = 200;
+            if (enemy.getHealth() > 1)
+            {
+                getWorld().addObject(new EnemyShell(getRotation()), getX(), getY());
+                shotTimer = 200;
+            }
         }
         if (shotTimer > 0)
         {
             shotTimer --;
+        }
+
+        if (enemy.getHealth() == 1)
+        {
+            this.setImage("SmallEnemyTurretDamaged.png");
         }
     }    
 }
