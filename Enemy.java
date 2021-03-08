@@ -23,7 +23,7 @@ public class Enemy extends Actor
             turnTowards(tank.getX(), tank.getY());
         }
         
-        if (isTouching(Wall.class) || isTouching(SideWall.class))
+        if (/*isTouching(Wall.class) || */ isTouching(SideWall.class))
         {
             move(-1);
         }
@@ -43,6 +43,11 @@ public class Enemy extends Actor
         else
         {
             this.setImage("SmallEnemyBodyDamaged.png");
+        }
+        
+        if (isTouching(Wall.class))
+        {
+            setLocation(getX()-1, getY());
         }
     }
     
