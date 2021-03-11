@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Shell here.
  * 
@@ -8,10 +7,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Shell extends Actor
 {
-    /**
-     * Act - do whatever the Shell wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private int direction, speed;
     private int shellTimer;
     
@@ -27,7 +22,11 @@ public class Shell extends Actor
         move(speed);
         if (isTouching(Wall.class) || isTouching(SideWall.class))
         {
+            getWorld().addObject(new Smoke(), this.getX(), this.getY());
             getWorld().removeObject(this);
+            //move(-4);
+            //this.setImage("Smoke.gif");
+            //getWorld().removeObject(this);
         }
         Timer();
     } 
@@ -36,6 +35,7 @@ public class Shell extends Actor
     {
         if (++shellTimer == 60*5) //Source: https://www.greenfoot.org/topics/61012/0
         {
+            getWorld().addObject(new Smoke(), this.getX(), this.getY());
             getWorld().removeObject(this);
             return;
         }

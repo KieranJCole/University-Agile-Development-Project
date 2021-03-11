@@ -26,6 +26,7 @@ public class Turret extends Player
     
     public void act() 
     {
+        Fire fire = new Fire(this);
         setLocation(tank.getX(), tank.getY());
         if (Greenfoot.mouseMoved(null))
         {
@@ -35,11 +36,17 @@ public class Turret extends Player
         if (Greenfoot.isKeyDown("space") && (shotTimer == 0)) //When Space is pressed the tank will fire if the Shot Timer is equal to 0
         {
             getWorld().addObject(new Shell(getRotation()), getX(), getY());
+            getWorld().addObject(fire, getX(), getY());
+            fire.setRotation(this.getRotation());
             shotTimer = 200; //Currently the timer is set to roughly 5 seconds
         }
         if (shotTimer > 0)
         {
             shotTimer --; //If the Shot Timer is greater than 0 it will -1 for this act cycle.
+        }
+        if (shotTimer == 0)
+        {
+            getWorld().removeObject(fire);
         }
     }
 }
