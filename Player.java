@@ -44,6 +44,11 @@ public class Player extends Actor
         {
             loseHealth(1);
         }
+        
+        if (isTouching(BossShell.class) && health - 1 >= 1)
+        {
+            loseHealth(1);
+        }
     }
     
     private void forward()

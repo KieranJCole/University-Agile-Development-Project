@@ -24,12 +24,9 @@ public class Shell extends Actor
         {
             getWorld().addObject(new Smoke(), this.getX(), this.getY());
             getWorld().removeObject(this);
-            //move(-4);
-            //this.setImage("Smoke.gif");
-            //getWorld().removeObject(this);
         }
         Timer();
-    } 
+    }
     
     public void Timer()
     {

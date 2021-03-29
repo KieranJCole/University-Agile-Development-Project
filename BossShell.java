@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EnemyShell here.
+ * Write a description of class BossShell here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class EnemyShell extends Actor
+public class BossShell extends Actor
 {
     private int direction, speed;
     private int shellTimer;
     
-    public EnemyShell(int dir)
+    public BossShell(int dir)
     {
         direction = dir;
         speed = 4;
@@ -38,5 +38,5 @@ public class EnemyShell extends Actor
             getWorld().removeObject(this);
             return;
         }
-    }
+    }  
 }

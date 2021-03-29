@@ -76,4 +76,9 @@ public class Enemy extends Actor
     {
         return health;
     }
+    
+    public void setHealth(int value)
+    {
+        health = value;
+    }
 }

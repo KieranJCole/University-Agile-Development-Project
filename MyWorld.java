@@ -9,6 +9,7 @@ import java.util.Random;
 public class MyWorld extends World
 {
     Player tank = new Player();
+    Random rand = new Random();
     
     public MyWorld()
     {    
@@ -24,8 +25,9 @@ public class MyWorld extends World
         
         addObject(new Target(), 0, 0);
         
-        Enemy enemy = new Enemy();
         addEnemy();
+        addEnemy2();
+        addBoss();
         
         addWall(300,300);
         addWall(750,300);
@@ -38,7 +40,6 @@ public class MyWorld extends World
     
     private void addEnemy()
     {
-        Random rand = new Random();
         for (int i = 0; i < 3; i++)
         {
             Enemy enemy = new Enemy();
@@ -50,6 +51,42 @@ public class MyWorld extends World
             
             EnemyTurret et = new EnemyTurret(enemy);
             addObject(et, 0, 0);
+        }
+    }
+    
+    private void addEnemy2()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            Enemy enemy = new Enemy();
+            int randX = rand.nextInt(1000);
+            int randY = rand.nextInt(1000);
+            addObject(enemy, randX, randY);
+            
+            enemy.setImage("Enemy2.png");
+            enemy.setHealth(75);
+            
+            addObject(new EhealthBar(enemy),randX - 40, randY);
+        }
+    }
+    
+    private void addBoss()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            Enemy enemy = new Enemy();
+            int randX = rand.nextInt(1000);
+            int randY = rand.nextInt(1000);
+            addObject(enemy, randX, randY);
+            
+            enemy.setImage("BigBossBody.png");
+            enemy.setHealth(200);
+            
+            addObject(new EhealthBar(enemy),randX - 40, randY);
+            
+            BossTurret bt = new BossTurret(enemy);
+            addObject(bt, 0, 0);
+            bt.setImage("BigBossTurret.png");
         }
     }
     
