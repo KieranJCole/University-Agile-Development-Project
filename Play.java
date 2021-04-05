@@ -22,6 +22,5 @@ public class Play extends Buttons
     {
         checkMouse();
         checkClick(new MyWorld());
-    
     }    
 }

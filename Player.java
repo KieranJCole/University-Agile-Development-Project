@@ -14,7 +14,7 @@ public class Player extends Actor
     int health = 100;
 
     public void act() 
-    {       
+    {
         if (Greenfoot.isKeyDown("a"))
         {
             turn(-1); 
@@ -71,7 +71,15 @@ public class Player extends Actor
     
     public void loseHealth(int damage)
     {
-        health = health - damage;
+        //If health is gone, then it will display the gameover screen
+        if (health - damage > 1)
+        {
+            health = health - damage;
+        }
+        else
+        {
+            Greenfoot.setWorld(new GameOver());
+        }
     }
     
     public int getHealth()
