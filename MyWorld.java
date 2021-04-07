@@ -25,9 +25,8 @@ public class MyWorld extends World
         
         addObject(new Target(), 0, 0);
         
-        addEnemy();
-        addEnemy2();
-        addBoss();
+        addEnemy(3);
+        addEnemy2(1);
         
         addWall(300,300);
         addWall(750,300);
@@ -38,9 +37,9 @@ public class MyWorld extends World
         addObject(new healthBar(tank), 150, 150);
     }
     
-    private void addEnemy()
+    private void addEnemy(int num)
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < num; i++)
         {
             Enemy enemy = new Enemy();
             int randX = rand.nextInt(1000);
@@ -54,9 +53,9 @@ public class MyWorld extends World
         }
     }
     
-    private void addEnemy2()
+    private void addEnemy2(int num)
     {
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < num; i++)
         {
             Enemy enemy = new Enemy();
             int randX = rand.nextInt(1000);
@@ -70,9 +69,9 @@ public class MyWorld extends World
         }
     }
     
-    private void addBoss()
+    private void addBoss(int num)
     {
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < num; i++)
         {
             Enemy enemy = new Enemy();
             int randX = rand.nextInt(1000);

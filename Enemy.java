@@ -42,7 +42,7 @@ public class Enemy extends Actor
         }
         else if (health == 1)
         {
-            this.setImage("SmallEnemyBodyDamaged.png");
+            this.setImage("Scorch.png");
         }
         
         if (isTouching(Wall.class))
