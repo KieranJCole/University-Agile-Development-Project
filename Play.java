@@ -22,5 +22,6 @@ public class Play extends Buttons
     {
         checkMouse();
         checkClick(new MyWorld());
+        //Greenfoot.playSound("D.T.S_Soundtrack.mp3");
     }    
 }

@@ -23,6 +23,7 @@ public class Shell extends Actor
         if (isTouching(Wall.class) || isTouching(SideWall.class))
         {
             getWorld().addObject(new Smoke(), this.getX(), this.getY());
+            Greenfoot.playSound("Player_Impact.mp3");
             getWorld().removeObject(this);
         }
         Timer();

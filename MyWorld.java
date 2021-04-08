@@ -25,8 +25,9 @@ public class MyWorld extends World
         
         addObject(new Target(), 0, 0);
         
-        addEnemy(3);
+        addEnemy(1);
         addEnemy2(1);
+        addBoss(1);
         
         addWall(300,300);
         addWall(750,300);
