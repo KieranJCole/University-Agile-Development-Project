@@ -22,7 +22,7 @@ public class EnemyShell extends Actor
         setRotation(direction);
         move(speed);
         
-        if (isTouching(Wall.class) || isTouching(SideWall.class))
+        if (isTouching(Wall.class) || isTouching(SideWall.class) || isTouching(iceSideWall.class) || isTouching(iceWall.class))
         {
             getWorld().addObject(new Smoke(), this.getX(), this.getY());
             getWorld().removeObject(this);

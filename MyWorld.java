@@ -31,9 +31,9 @@ public class MyWorld extends World
         
         addWall(300,300);
         addWall(750,300);
-        addWall(800,800);
+        //addWall(800,800);
         addWall(350,700);
-        addWall(500,500);
+        //addWall(500,500);
         
         addFirerate();
         addHealth();

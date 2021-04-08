@@ -24,7 +24,7 @@ public class Enemy extends Actor
             turnTowards(tank.getX(), tank.getY());
         }
         
-        if (isTouching(Wall.class) || isTouching(SideWall.class))
+        if (isTouching(Wall.class) || isTouching(SideWall.class) || isTouching(iceSideWall.class) || isTouching(iceWall.class))
         {
             move(-1);
         }

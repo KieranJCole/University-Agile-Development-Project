@@ -32,7 +32,7 @@ public class Player extends Actor
         if (Greenfoot.isKeyDown("w"))
         {
             forward();
-            if (isTouching(Wall.class) || isTouching(SideWall.class))
+            if (isTouching(Wall.class) || isTouching(SideWall.class)|| isTouching(iceSideWall.class) || isTouching(iceWall.class))
             {
                 back();
             }
@@ -40,7 +40,7 @@ public class Player extends Actor
         if (Greenfoot.isKeyDown("s"))
         {
             back();
-            if (isTouching(Wall.class) || isTouching(SideWall.class))
+            if (isTouching(Wall.class) || isTouching(SideWall.class) || isTouching(iceSideWall.class) || isTouching(iceWall.class))
             {
                 forward();
             }

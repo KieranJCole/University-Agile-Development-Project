@@ -15,7 +15,7 @@ public class MyWorld2 extends World
     {    
         super(1000, 1000, 1);
         
-        setBackground(new GreenfootImage("snowMap.png"));
+        setBackground(new GreenfootImage("Level2.png"));
         
         setPaintOrder(Target.class, Shell.class, Player.class, Enemy.class, Wall.class);
         
@@ -31,9 +31,13 @@ public class MyWorld2 extends World
         
         addWall(300,300);
         addWall(750,300);
-        addWall(800,800);
+        //addWall(800,800);
         addWall(350,700);
-        addWall(500,500);
+        //addWall(500,500);
+        
+        addFirerate();
+        addHealth();
+        addSpeed();
         
         addObject(new healthBar(tank), 150, 150);
     }
@@ -106,5 +110,39 @@ public class MyWorld2 extends World
         {
             addObject(wall2, x, y);
         }
+    }
+    
+    // Spawns one of each pickup randomly in the world
+    private void addFirerate()
+    {
+        int randX = rand.nextInt(1000);
+        int randY = rand.nextInt(1000);
+        
+        Pickup firerate = new Pickup();
+        addObject(firerate, randX, randY);
+        firerate.setImage("RateUp.png");
+        firerate.setType("Firerate");
+    }
+    
+    private void addHealth()
+    {
+        int randX = rand.nextInt(1000);
+        int randY = rand.nextInt(1000);
+        
+        Pickup health = new Pickup();
+        addObject(health, randX, randY);
+        health.setImage("HealthUp.png");
+        health.setType("Health");
+    }
+    
+    private void addSpeed()
+    {
+        int randX = rand.nextInt(1000);
+        int randY = rand.nextInt(1000);
+        
+        Pickup speed = new Pickup();
+        addObject(speed, randX, randY);
+        speed.setImage("SpeedUp.png");
+        speed.setType("Speed");
     }
 }
