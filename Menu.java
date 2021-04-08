@@ -18,7 +18,7 @@ public class Menu extends World
     
     private void prepare()
     {
-        GreenfootImage logo = new GreenfootImage("TESTLOGO.png");
+        GreenfootImage logo = new GreenfootImage("DynamiteThunderSafariLOGO.png");
         Picture logoPic = new Picture(logo);
         addObject(logoPic,getWidth()/2,150);
 

@@ -11,7 +11,7 @@ class.Menu.image=menuBackground.png
 class.MyWorld.image=background-export.png
 class.MyWorld2.image=snowMap.png
 class.NextLevel.image=Next\ Level.png
-class.Picture.image=TESTLOGO.png
+class.Picture.image=DynamiteThunderSafariLOGO.png
 class.Player.image=SmallBody.png
 class.Shell.image=APHEHEHEHEHE-export.png
 class.SideWall.image=Wall-Side.png
@@ -247,9 +247,15 @@ dependency8.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=healthBar
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=150
+=======
+editor.fx.0.height=1087
+editor.fx.0.width=974
+editor.fx.0.x=-7
+>>>>>>> fe33113a090ebf84f8db614588c1b1c4776252c9
 editor.fx.0.y=0
 height=694
 package.numDependencies=75
