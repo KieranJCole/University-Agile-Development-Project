@@ -17,7 +17,7 @@ public class MyWorld extends World
         
         setBackground(new GreenfootImage("background-export.png"));
         
-        setPaintOrder(Target.class, Shell.class, Player.class, Enemy.class, Wall.class);
+        setPaintOrder(Target.class, Shell.class, Player.class, Pickup.class, Enemy.class, Wall.class);
         
         Turret turret = new Turret(tank);
         addObject(tank, 150, 150);

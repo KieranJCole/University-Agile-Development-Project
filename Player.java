@@ -78,10 +78,12 @@ public class Player extends Actor
     
     private void back()
     {
+        double speed = 1.15;
+        if (searchItems("Speed")){speed = 2;}
         //Below algorithm is not original to this project
         //source: https://www.greenfoot.org/topics/8103/0
-        a -= Math.cos(Math.toRadians(getRotation()))* 1.15;
-        b -= Math.sin(Math.toRadians(getRotation())) * 1.15;
+        a -= Math.cos(Math.toRadians(getRotation()))* speed;
+        b -= Math.sin(Math.toRadians(getRotation())) * speed;
         setLocation((int)a, (int)b);
     }
     
