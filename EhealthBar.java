@@ -17,6 +17,12 @@ public class EhealthBar extends Enemy
     
     public void act() 
     {
+        if (enemy.getWorld() == null) return;
+        
+        if (enemy.getHealth() == 1)
+        {
+            getWorld().removeObject(this);
+        }
         changeSize();
         
         setLocation(enemy.getX(), enemy.getY() - 40);

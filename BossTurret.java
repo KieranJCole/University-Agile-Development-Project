@@ -20,6 +20,8 @@ public class BossTurret extends Enemy
     
     public void act() 
     {
+        if (enemy.getWorld() == null) return;
+        
         setLocation(enemy.getX(), enemy.getY());
         
         setRotation(enemy.getRotation());
@@ -39,7 +41,7 @@ public class BossTurret extends Enemy
 
         if (enemy.getHealth() == 1)
         {
-            this.setImage("SmallEnemyTurretDamaged.png");
+            getWorld().removeObject(this);
         }
     }   
 }
