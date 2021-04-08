@@ -4,7 +4,7 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE: D.T.S
+PROJECT TITLE: Dynamite Thunder Safari
 PURPOSE OF PROJECT: CO553 Project
 VERSION or DATE: V0.10
 HOW TO START THIS PROJECT:
