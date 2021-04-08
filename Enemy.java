@@ -16,6 +16,7 @@ public class Enemy extends Actor
     public void act() 
     {
         Actor tank = (Actor)getWorld().getObjects(Player.class).get(0);
+        if (this == null || this.getWorld() == null || getWorld() == null) return;
         
         if (health > 1)
         {
@@ -42,7 +43,8 @@ public class Enemy extends Actor
         }
         else if (health == 1)
         {
-            this.setImage("Scorch.png");
+            getWorld().removeObject(this);
+            return;
         }
         /*
         if (isTouching(Wall.class))

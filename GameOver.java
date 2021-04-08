@@ -13,7 +13,7 @@ public class GameOver extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 400, 1);
         
-        Play restart = new Play();
+        MenuReturn restart = new MenuReturn();
         addObject(restart,302,288);
         restart.setLocation(450,300);
         restart.setImage("Restart.png");

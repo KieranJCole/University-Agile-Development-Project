@@ -21,6 +21,8 @@ public class EnemyTurret extends Enemy
     
     public void act() 
     {
+        if (enemy.getWorld() == null) return;
+        
         setLocation(enemy.getX(), enemy.getY());
         
         setRotation(enemy.getRotation());
@@ -40,7 +42,7 @@ public class EnemyTurret extends Enemy
 
         if (enemy.getHealth() == 1)
         {
-            this.setImage("SmallEnemyTurretDamaged.png");
+            getWorld().removeObject(this);
         }
     }    
 }

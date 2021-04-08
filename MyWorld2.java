@@ -1,21 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Random;
 /**
- * Write a description of class MyWorld here.
+ * Write a description of class MyWorld2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MyWorld extends World
+public class MyWorld2 extends World
 {
     Player tank = new Player();
     Random rand = new Random();
     
-    public MyWorld()
+    public MyWorld2()
     {    
         super(1000, 1000, 1);
         
-        setBackground(new GreenfootImage("background-export.png"));
+        setBackground(new GreenfootImage("snowMap.png"));
         
         setPaintOrder(Target.class, Shell.class, Player.class, Enemy.class, Wall.class);
         
@@ -25,9 +25,9 @@ public class MyWorld extends World
         
         addObject(new Target(), 0, 0);
         
-        addEnemy(1);
-        addEnemy2(1);
-        addBoss(1);
+        addEnemy();
+        addEnemy2();
+        addBoss();
         
         addWall(300,300);
         addWall(750,300);
@@ -35,16 +35,12 @@ public class MyWorld extends World
         addWall(350,700);
         addWall(500,500);
         
-        addFirerate();
-        addHealth();
-        addSpeed();
-        
         addObject(new healthBar(tank), 150, 150);
     }
     
-    private void addEnemy(int num)
+    private void addEnemy()
     {
-        for (int i = 0; i < num; i++)
+        for (int i = 0; i < 3; i++)
         {
             Enemy enemy = new Enemy();
             int randX = rand.nextInt(1000);
@@ -58,9 +54,9 @@ public class MyWorld extends World
         }
     }
     
-    private void addEnemy2(int num)
+    private void addEnemy2()
     {
-        for (int i = 0; i < num; i++)
+        for (int i = 0; i < 1; i++)
         {
             Enemy enemy = new Enemy();
             int randX = rand.nextInt(1000);
@@ -74,9 +70,9 @@ public class MyWorld extends World
         }
     }
     
-    private void addBoss(int num)
+    private void addBoss()
     {
-        for (int i = 0; i < num; i++)
+        for (int i = 0; i < 1; i++)
         {
             Enemy enemy = new Enemy();
             int randX = rand.nextInt(1000);
@@ -93,14 +89,14 @@ public class MyWorld extends World
             bt.setImage("BigBossTurret.png");
         }
     }
-    // Adds a wall to the world
+    
     private void addWall(int x, int y)
     {
         Random rand = new Random();
         int num = rand.nextInt(2);
         
-        Wall wall = new Wall();
-        SideWall wall2 = new SideWall();
+        iceWall wall = new iceWall();
+        iceSideWall wall2 = new iceSideWall();
         
         if (num == 0)
         {
@@ -110,51 +106,5 @@ public class MyWorld extends World
         {
             addObject(wall2, x, y);
         }
-    }
-    // Spawns one of each pickup randomly in the world
-    private void addFirerate()
-    {
-        int randX = rand.nextInt(1000);
-        int randY = rand.nextInt(1000);
-        
-        Pickup firerate = new Pickup();
-        addObject(firerate, randX, randY);
-        firerate.setImage("RateUp.png");
-        firerate.setType("Firerate");
-    }
-    
-    private void addHealth()
-    {
-        int randX = rand.nextInt(1000);
-        int randY = rand.nextInt(1000);
-        
-        Pickup health = new Pickup();
-        addObject(health, randX, randY);
-        health.setImage("HealthUp.png");
-        health.setType("Health");
-    }
-    
-    private void addSpeed()
-    {
-        int randX = rand.nextInt(1000);
-        int randY = rand.nextInt(1000);
-        
-        Pickup speed = new Pickup();
-        addObject(speed, randX, randY);
-        speed.setImage("SpeedUp.png");
-        speed.setType("Speed");
-    }
-    
-    public void winCondition()
-        {
-            if(getObjects(Enemy.class).isEmpty())
-            {
-                Greenfoot.setWorld(new NextLevel());
-            }
-        }
-        
-    public void act()
-    {
-        winCondition();
     }
 }
