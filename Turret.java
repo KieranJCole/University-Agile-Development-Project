@@ -39,6 +39,7 @@ public class Turret extends Player
             getWorld().addObject(fire, getX(), getY());
             fire.setRotation(this.getRotation());
             shotTimer = 200; //Currently the timer is set to roughly 5 seconds
+            Greenfoot.playSound("Cannon_Shot.wav");
         }
         if (shotTimer > 0)
         {

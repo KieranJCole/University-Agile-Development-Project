@@ -1,4 +1,4 @@
-public class Inventory extends Actor 
+/*public class Inventory extends Actor 
 {
     String[]Inventory;
 
@@ -25,3 +25,4 @@ public class Inventory extends Actor
     {
         damage = 10;
     }
+    */
