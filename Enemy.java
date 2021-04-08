@@ -36,7 +36,7 @@ public class Enemy extends Actor
                 move(-1);
             }
         }
-        
+        //When enemy has lost all health, removes enemy from the world
         if (isTouching(Shell.class) && health - 1 >= 1)
         {
             loseHealth(1);
