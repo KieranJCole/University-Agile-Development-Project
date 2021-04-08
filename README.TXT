@@ -6,7 +6,7 @@ all he/she needs to know. The comments should usually include at least:
 
 PROJECT TITLE: D.T.S
 PURPOSE OF PROJECT: CO553 Project
-VERSION or DATE: V0.09
+VERSION or DATE: V0.10
 HOW TO START THIS PROJECT:
 AUTHORS: Kieran, Dan, Julian & George
 USER INSTRUCTIONS:
