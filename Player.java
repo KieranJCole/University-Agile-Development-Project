@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * Write a description of class Player here.
@@ -11,10 +12,15 @@ public class Player extends Actor
     double a = 150;
     double b = 150;
     
-    int health = 100;
-
+    boolean pickedUp = false; //Used to make sure the player doesnt gain life in-definately
+    
+    int health = 100; //Starting health
+    
+    ArrayList<String> items = new ArrayList<String>(); //List to store the items the player has collected
+    
     public void act() 
     {
+        // Movement controls
         if (Greenfoot.isKeyDown("a"))
         {
             turn(-1); 
@@ -39,24 +45,34 @@ public class Player extends Actor
                 forward();
             }
         }
-        
+        // If the player gets shot, they lose life
         if (isTouching(EnemyShell.class) && health - 1 >= 1)
         {
             loseHealth(1);
         }
-        
+        // If the player is shot by the boss, they lose more life
         if (isTouching(BossShell.class) && health - 1 >= 1)
         {
-            loseHealth(1);
+            loseHealth(2);
+        }
+        // If the player touches a pick-up it is added to the item list
+        if (isTouching(Pickup.class))
+        {
+            Pickup pick = (Pickup) getOneIntersectingObject(Pickup.class);
+            addItem(pick.getType());
+            if (pick.getType() == "Health"){loseHealth(-50);}
+            getWorld().removeObject(pick);
         }
     }
     
     private void forward()
     {
+        double speed = 1.15;
+        if (searchItems("Speed")){speed = 2;}
         //Below algorithm is not original to this project
         //source: https://www.greenfoot.org/topics/8103/0
-        a += Math.cos(Math.toRadians(getRotation()))* 1.15;
-        b += Math.sin(Math.toRadians(getRotation())) * 1.15;
+        a += Math.cos(Math.toRadians(getRotation()))* speed;
+        b += Math.sin(Math.toRadians(getRotation())) * speed;
         setLocation((int)a, (int)b);
     }
     
@@ -85,5 +101,25 @@ public class Player extends Actor
     public int getHealth()
     {
         return health;
+    }
+    
+    public boolean searchItems(String item)
+    {
+        for (int i = 0; i < items.size(); i++)
+        {
+            if (items.get(i) == item)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public void addItem(String item)
+    {
+        if (!searchItems(item))
+        {
+            items.add(item);
+        }
     }
 }

@@ -34,6 +34,15 @@ public class MyWorld extends World
         addWall(350,700);
         addWall(500,500);
         
+        Pickup health = new Pickup();
+        addObject(health, 0, 0);
+        health.setImage("HealthUp.png");
+        health.setType("Health");
+        
+        addFirerate();
+        addHealth();
+        addSpeed();
+        
         addObject(new healthBar(tank), 150, 150);
     }
     
@@ -88,7 +97,7 @@ public class MyWorld extends World
             bt.setImage("BigBossTurret.png");
         }
     }
-    
+    // Adds a wall to the world
     private void addWall(int x, int y)
     {
         Random rand = new Random();
@@ -105,5 +114,38 @@ public class MyWorld extends World
         {
             addObject(wall2, x, y);
         }
+    }
+    // Spawns one of each pickup randomly in the world
+    private void addFirerate()
+    {
+        int randX = rand.nextInt(1000);
+        int randY = rand.nextInt(1000);
+        
+        Pickup firerate = new Pickup();
+        addObject(firerate, randX, randY);
+        firerate.setImage("FirerateUp.png");
+        firerate.setType("Firerate");
+    }
+    
+    private void addHealth()
+    {
+        int randX = rand.nextInt(1000);
+        int randY = rand.nextInt(1000);
+        
+        Pickup firerate = new Pickup();
+        addObject(firerate, randX, randY);
+        firerate.setImage("FirerateUp.png");
+        firerate.setType("Firerate");
+    }
+    
+    private void addSpeed()
+    {
+        int randX = rand.nextInt(1000);
+        int randY = rand.nextInt(1000);
+        
+        Pickup firerate = new Pickup();
+        addObject(firerate, randX, randY);
+        firerate.setImage("FirerateUp.png");
+        firerate.setType("Firerate");
     }
 }

@@ -8,11 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Turret extends Player
 {
-    /**
-     * Act - do whatever the Turret wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     private int direction, speed;
 
     private int shotTimer;
@@ -39,6 +34,7 @@ public class Turret extends Player
             getWorld().addObject(fire, getX(), getY());
             fire.setRotation(this.getRotation());
             shotTimer = 200; //Currently the timer is set to roughly 5 seconds
+            if (tank.searchItems("Firerate")){shotTimer = 100;}
         }
         if (shotTimer > 0)
         {

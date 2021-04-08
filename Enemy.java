@@ -44,11 +44,12 @@ public class Enemy extends Actor
         {
             this.setImage("Scorch.png");
         }
-        
+        /*
         if (isTouching(Wall.class))
         {
             setLocation(getX()-1, getY());
         }
+        */
     }
     
     private void back()
