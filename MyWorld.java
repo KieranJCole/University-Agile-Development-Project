@@ -35,11 +35,6 @@ public class MyWorld extends World
         addWall(350,700);
         addWall(500,500);
         
-        Pickup health = new Pickup();
-        addObject(health, 0, 0);
-        health.setImage("HealthUp.png");
-        health.setType("Health");
-        
         addFirerate();
         addHealth();
         addSpeed();
@@ -124,7 +119,7 @@ public class MyWorld extends World
         
         Pickup firerate = new Pickup();
         addObject(firerate, randX, randY);
-        firerate.setImage("FirerateUp.png");
+        firerate.setImage("RateUp.png");
         firerate.setType("Firerate");
     }
     
@@ -133,10 +128,10 @@ public class MyWorld extends World
         int randX = rand.nextInt(1000);
         int randY = rand.nextInt(1000);
         
-        Pickup firerate = new Pickup();
-        addObject(firerate, randX, randY);
-        firerate.setImage("FirerateUp.png");
-        firerate.setType("Firerate");
+        Pickup health = new Pickup();
+        addObject(health, randX, randY);
+        health.setImage("HealthUp.png");
+        health.setType("Health");
     }
     
     private void addSpeed()
@@ -144,9 +139,9 @@ public class MyWorld extends World
         int randX = rand.nextInt(1000);
         int randY = rand.nextInt(1000);
         
-        Pickup firerate = new Pickup();
-        addObject(firerate, randX, randY);
-        firerate.setImage("FirerateUp.png");
-        firerate.setType("Firerate");
+        Pickup speed = new Pickup();
+        addObject(speed, randX, randY);
+        speed.setImage("SpeedUp.png");
+        speed.setType("Speed");
     }
 }
