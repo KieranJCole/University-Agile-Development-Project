@@ -18,3 +18,6 @@ A - Rotate left
 D - Rotate right
 SPACE - Fire
 Mouse - Move turret
+
+Objective:
+As the red tank, the objective of the game is to eliminate the blue tanks as well as the boss that shoots 2 shells, which means you have plan how to take out the boss before it takes you! However there are power-ups scattered across the map which can provide the you with an advantage to take out the boss tank.
