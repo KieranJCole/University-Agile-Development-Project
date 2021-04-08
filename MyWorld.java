@@ -25,15 +25,12 @@ public class MyWorld extends World
         
         addObject(new Target(), 0, 0);
         
-        addEnemy(1);
+        addEnemy(3);
         addEnemy2(1);
-        addBoss(1);
         
         addWall(300,300);
         addWall(750,300);
-        //addWall(800,800);
         addWall(350,700);
-        //addWall(500,500);
         
         addFirerate();
         addHealth();
@@ -67,10 +64,14 @@ public class MyWorld extends World
             int randY = rand.nextInt(1000);
             addObject(enemy, randX, randY);
             
-            enemy.setImage("Enemy2.png");
+            enemy.setImage("ETankSmallBody.png");
             enemy.setHealth(75);
             
             addObject(new EhealthBar(enemy),randX - 40, randY);
+            
+            EnemyTurret et = new EnemyTurret(enemy);
+            addObject(et, 0, 0);
+            et.setImage("ETurret.png");
         }
     }
     
