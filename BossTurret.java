@@ -31,6 +31,7 @@ public class BossTurret extends Enemy
             if (enemy.getHealth() > 1)
             {
                 getWorld().addObject(new BossShell(getRotation()), getX(), getY());
+                Greenfoot.playSound("Boss_Cannon.mp3");
                 shotTimer = 200;
             }
         }

@@ -32,6 +32,7 @@ public class EnemyTurret extends Enemy
             if (enemy.getHealth() > 1)
             {
                 getWorld().addObject(new EnemyShell(getRotation()), getX(), getY());
+                Greenfoot.playSound("Enemy_Cannon_2.mp3");
                 shotTimer = 200;
             }
         }
